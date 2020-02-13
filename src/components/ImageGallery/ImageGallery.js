@@ -39,20 +39,18 @@ class ImageGallery extends Component {
     const { isModalOpen, largeImageURL } = this.state;
     const { images } = this.props;
     return (
-      <>
-        <ul
-          className={styles.ImageGallery}
-          onClick={this.openModal}
-          role="presentation"
-        >
-          {images.map(image => (
-            <ImageGalleryItem key={image.id} image={image} />
-          ))}
-          {isModalOpen && (
-            <Modal largeImageURL={largeImageURL} onClose={this.closeModal} />
-          )}
-        </ul>
-      </>
+      <ul
+        className={styles.ImageGallery}
+        onClick={this.openModal}
+        role="presentation"
+      >
+        {images.map(image => (
+          <ImageGalleryItem key={image.id} image={image} />
+        ))}
+        {isModalOpen && (
+          <Modal largeImageURL={largeImageURL} onClose={this.closeModal} />
+        )}
+      </ul>
     );
   }
 }
